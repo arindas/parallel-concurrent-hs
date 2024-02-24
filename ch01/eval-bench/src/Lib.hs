@@ -1,5 +1,4 @@
 module Lib (
-    someFunc,
     fib,
     retAtLaunch,
     retAtSeqFinish,
@@ -10,15 +9,21 @@ where
 
 import Control.Parallel.Strategies (Eval, rpar, rseq)
 
-someFunc :: IO ()
-someFunc = putStrLn "someFunc"
-
 -- fib :: Int -> Int
 -- fib n = go n (0, 1)
 --   where
 --     go x (a, b)
 --         | x == 0 = a
 --         | otherwise = go (x - 1) (b, a + b)
+
+-- fibList :: (Num t) => t -> t -> [t]
+-- fibList a b = a : b : fibList (a + b) (a + b + b)
+--
+-- fibs :: [Integer]
+-- fibs = fibList 0 1
+--
+-- fib :: Int -> Integer
+-- fib n = fibs !! n
 
 fib :: Integer -> Integer
 fib 0 = 1
